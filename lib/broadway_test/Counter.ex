@@ -11,6 +11,7 @@ defmodule Counter do
 
   def handle_info(:get_messages, demand) do
     messages = Events.get_event()
+    # IO.inspect(demand)
 
     new_demand =
       cond do
@@ -21,7 +22,7 @@ defmodule Counter do
           demand
       end
 
-    IO.inspect(messages |> length())
+    # IO.inspect(messages |> length())
 
     cond do
       new_demand == 0 ->

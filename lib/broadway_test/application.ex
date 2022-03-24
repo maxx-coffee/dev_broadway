@@ -8,6 +8,8 @@ defmodule BroadwayTest.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      Events,
+      Producer
       # Starts a worker by calling: BroadwayTest.Worker.start_link(arg)
       # {BroadwayTest.Worker, arg}
     ]
